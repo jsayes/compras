@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservacion de habitación sencilla</title>
+</head>
+<body>
+    <h1>Reservación exitosa de habitación sencilla</h1>
+    <p>Su reservacion se ha guardado con los siguientes datos:</p>
+    <p>Nombre: {{ nombre }}</p>
+     <p>Celular: {{ celular }}</p>
+     <p>Email: {{ email }}</p>
+     <p>Cantidad de noches: {{ noches }}</p>
+    <p>Cantidad de huespedes: {{ huespedes }}</p>
+     <p>Total a pagar: {{ total }}</p>
+
+    <input type="hidden" name="nombre" value="{{ nombre }}">
+    <input type="hidden" name="celular" value="{{ celular }}">
+    <input type="hidden" name="email" value="{{ email }}">
+    <input type="hidden" name="noches" value="{{ noches }}">
+    <input type="hidden" name="huespedes" value="{{ huespedes }}">
+    <input type="hidden" name="total" value="{{ total }}">
+
+
+    {% csrf_token %}
+    <a href="{% url 'index' %}" class="button">Aceptar</a>
+
+</body>
+</html>
+
